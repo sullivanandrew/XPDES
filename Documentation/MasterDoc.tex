@@ -1,0 +1,216 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{dcolumn}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage[latin1]{inputenc}
+\usepackage{latexsym}
+\usepackage{rotating}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage[usenames]{color}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\usepackage{verbatim}
+\usepackage{authblk}
+\usepackage{tensor}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[scientific-notation=true]{siunitx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bal}{\begin{align}}
+%\end{align} command not allowed by LaTex syntax
+\newcommand{\bsp}{\begin{split}}
+\newcommand{\esp}{\end{split}}
+
+\newcommand{\GR}{{\mbox{\tiny GR}}}
+\newcommand{\Hz}{{\mbox{\tiny H}}}
+\newcommand{\new}{{\mbox{\tiny new}}}
+\newcommand{\old}{{\mbox{\tiny old}}}
+\newcommand{\eff}{{\mbox{\tiny eff}}}
+\newcommand{\nonlin}{{\mbox{\tiny nonlin}}}
+\newcommand{\ISCO}{{\mbox{\tiny ISCO}}}
+\newcommand{\LR}{{\mbox{\tiny LR}}}
+
+\newcommand{\bw}{\begin{widetext}}
+\newcommand{\ew}{\end{widetext}}
+
+\newcommand{\nn}{\nonumber}
+\newcommand{\ph}{\phantom{n}}
+\newcommand{\pd}{\partial}
+\newcommand{\cd}{\nabla}
+\newcommand{\tn}{\tensor}
+\newcommand{\tnst}{\tensor*}
+
+\newcommand{\ssqth}{\sin^2{\theta}}
+\newcommand{\csqth}{\cos^2{\theta}}
+
+\newcommand{\ext}{\mathrm{ext}}
+\newcommand{\inter}{\mathrm{int}}
+\newcommand{\mcl}{\mathcal}
+
+\newcommand{\mrm}{\mathrm}
+\newcommand{\rarr}{\rightarrow}
+\newcommand{\larr}{\leftarrow}
+
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+\newcommand{\lcb}{\left\{}
+\newcommand{\rcb}{\right\}}
+\newcommand{\lsb}{\left[}
+\newcommand{\rsb}{\right]}
+\newcommand{\ld}{\left.}
+\newcommand{\rd}{\right.}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\as}[1]{\textcolor{cyan}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\ny}[1]{\textcolor{blue}{\it{\textbf{ny: #1}}}\xspace}
+
+\newcommand{\efun}{\mathrm{(exp)}}
+\newcommand{\lin}{\mathrm{(lin)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{eXtreme Partial Differential Equation Solver}
+
+\author{Andrew Sullivan}
+\affil{Department of Physics, Montana State University, Bozeman, MT 59717, USA.}
+
+\date{\today}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This is the documentation of the eXtreme Partial Differential Equation Solver (XPDES) as detailed
+in arxiv:TBD. This includes an overview of each component and the necessary steps to compile and
+execute the program. For any questions, contact Andrew Sullivan at andrew.sullivan4@montana.edu.
+
+\section{Folder Structure}
+\label{sec:folderstruct}
+
+The XPDES project folder is structured as such:
+
+\begin{itemize}
+\item Code
+\begin{itemize}
+\item BVP\_GENICBC.c: procedurally generated C-file to evaluate boundary conditions at each iteration and set initial guess.
+\item BVP\_GENsys.c: procedurally generated C-file to evaluate residual and Jacobian at each iteration.
+\item BVP\_grid.c: Grid adjustment and interpolation.
+\item BVP\_header.h: Main header file. Provides every BVP function declaration as well as `\#include' the procedurally generated field equation and Jacobian function declarations.
+\item BVP\_LSsolver.c: Modular linear system solver.
+\item BVP\_main.c: Main Newton-Raphson control loop.
+\item BVP\_out.c: Output generator to directory `Data/BVPout'.
+\item BVP.c: Main file to initialize executable variables and call `BVP\_main()'.
+\end{itemize}
+\item Documentation
+\begin{itemize}
+\item MasterDoc.pdf: Master documentation file
+\item Linear Solvers.pdf: Description of linear solver algorithms
+\end{itemize}
+\item Execs
+\begin{itemize}
+\item BVPEDGB.exe: Main executable for scalar-Gauss-Bonnet gravity.
+\item mgen.exe: Executable to generate C header function declarations and Maple field equation exporter code.
+\item ibgen.exe: Executable to generate initial and boundary conditions.
+\item jgen.exe: Executable to generate system Jacobian.
+\end{itemize}
+\item Funcs
+\begin{itemize}
+\item CExport\_Funcs.c: C file with procedurally generated function declarations that is \#included in the C header file.
+\item FEout.c: C file with exported field equations for evaluation.
+\item ICBCout.c: C file with exported initial conditions and boundary conditions for evaluation.
+\end{itemize}
+\item Gens
+\begin{itemize}
+\item Maple\_Export Folder
+\begin{itemize}
+\item This folder contains the Maple field equation calculation and export. Filenames have the general structure ``FE\_THEORY\_export.mw". Creates: `FEout.c'.
+\end{itemize}
+\item Export\_MapleGen.c: C code to generate C header function declarations and Maple field equation exporter code. Creates: `Decl\_JSFuncs.c', `Decl\_CFuncs.c', `MapleREAD\_FEexport.txt', and `MapleREAD\_ICBCexport.txt'.
+\item Export\_ICBC.c: C code to generate C initial conditions and boundary conditions. Creates: `BVP\_ICBC.c'.
+\item Export\_Jac.c: Code to procedurally generate the system Jacobian evaluation file. Creates: `BVP\_sys.c'.
+\item MapleREAD\_FEexport.txt: Text file with Maple commands to calculate and export the field equations. Executed through a ``read" command in the Maple command line.
+\item MapleREAD\_ICBCexport.txt: Text file with Maple commands to calculate and export initial conditions and boundary conditions. Executed through a ``read" command in the Maple command line.
+\end{itemize}
+\item BVPcompile.sh: Bash compile file
+\item BVPbatch.sh: Bash executable file
+\end{itemize}
+
+
+
+%----------------------------------------
+\subsection{Compilation Pipeline}
+\label{ssec:exec}
+
+To facilitate the variable system of equations, certain files must be procedurally generated to adjust for the number of equations and unknown functions. This requires some back and forth communication between C executables and Maple. Reprocedurally generating all of the C-files is unnecessary as you can simply use the pre-generated files that will be described in the next subsection. For completeness, the step by step process is all done from the terminal using `BVPcompileFULL.sh':
+
+\begin{enumerate}
+\item Compile full program with `BVPcompileFULL.sh'
+\begin{enumerate}
+\item The generators must be compiled with the user defined input of the number of field equations `nfields' which will be twice the number of fields. For example, for scalar-Gauss-Bonnet gravity, the 4 metric functions and the scalar field provide 5 fields total, each with a mixed partial derivative field equation associated with it for a total of 10 field equations so $\mathrm{nfields} = 10$. The maximum derivative order must also be supplied.
+\begin{itemize}
+\item `Export\_MapleGen.c' $\rarr$ `mgen.exe'
+\end{itemize}
+\item Generators are executed
+\begin{itemize}
+\item `mgen.exe' procedurally generates $\rarr$ `MapleREAD\_FEexport.txt' and `MapleREAD\_ICBCexport.txt' as well as `Decl\_JSFuncs.c' and `Decl\_CFuncs.c'. These are essential as the number of arguments to every declared function will vary depending on the number of field equations.
+\begin{itemize}
+\item `MapleREAD\_FEexport.txt' and `MapleREAD\_ICBCexport.txt' are read inside Maple to calculate and export the field equations and the initial and boundary conditions.
+\item `Decl\_JSFuncs.c' provides the function declarations for the estimation of the number of nonzeros of the Jacobian. They are `\#included' into the `BVP\_header.h' file.
+\item `Decl\_CFuncs.c' provides the function declarations for the Newton polynomial calculator `NP\_calc.c' (which needs the maximum derivative order), the physical observables, the field equation residuals, the Jacobian partial derivatives, the boundary conditions, and the initial conditions. They are `\#included' into the `BVP\_header.h' file.
+\end{itemize}
+\end{itemize}
+\item On the pause prompt...
+\end{enumerate}
+\item Execute the Maple worksheet in the Maple\_Export folder.
+\begin{enumerate}
+\item Maple will ``read" `MapleREAD\_FEexecute.txt' and procedurally generate $\rarr$ `Defn\_FEout.c'. These are the function declarations for the declared functions above.
+\item Maple will ``read" `MapleREAD\_ICBCexecute.txt' and procedurally generate $\rarr$ `Defn\_ICBCout.c'. These are the function declarations for the declared functions above.
+\end{enumerate}
+\item Press enter terminal window to continue compiling the full program through gcc $\rarr$ `BVPNAME.exe'
+\begin{itemize}
+\item Automatically, `Export\_NNZGen.c' is compiled into `nnzgen.exe' which uses the defined Jacobian structure functions from `Decl\_JSFuncs.c' and `Defn\_JSFuncs.c' to estimate the number of the nonzeros of the Jacobian when given a grid size so that the algorithm can calculate approximately how much memory to allocate.
+\item Automatically, `Export\_CGen.c' uses `CodeGen\_GENNNZ.c' and is compiled into `cgen.exe' which procedurally generates the intial conditions, boundary conditions, and Jacobian evaluation C-files in the `Code' folder. `BVP\_GENICBC.c' and `BVP\_GENsys.c' respectively.
+\item Then `BVPNAME.exe' is compiled to the `Execs' folder.
+\end{itemize}
+\item Execute program with `BVPbatch.sh' to determine inputs. WARNING: this will also delete and remake the `Data' directory where the solutions are stored.
+\end{enumerate}
+
+
+
+
+%----------------------------------------
+\subsection{Compilation Shortcut}
+\label{ssec:short}
+
+The field equation dependent files that are required upon compilation are:
+\begin{itemize}
+\item `/Code/BVP\_GENICBC.c'
+\item `/Code/BVP\_GENsys.c'
+\item `/Funcs/Decl\_CFuncs.c'
+\item `/Funcs/Decl\_JSFuncs.c'
+\item `/Funcs/Defn\_FEout.c'
+\item `/Funcs/Defn\_ICBCout.c'
+\item `/Funcs/Defn\_JSout.c'
+\end{itemize}
+
+To compile, copy the above files from the labeled folder in the `XPDES' directory into their respective location (either `/Code' or `/Funcs') and from the command line execute `BVPcompile.sh. This will compile and place the `BVPNAME.exe' executable in the `/Execs' folder.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
