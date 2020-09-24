@@ -4,4 +4,4 @@ The goal of this project is to provide an open source partial differential equat
 
 To get started, see the documentation provided in MasterDoc.pdf in the Documentation folder. This describes the structure of the XPDES project folder and details the full execution of the numerical infrastructure.
 
-For any questions, email Andrew Sullivan at andrew.sullivan4@montana.edu
+For any questions, email Andrew Sullivan at andrew.sullivan@princeton.edu
