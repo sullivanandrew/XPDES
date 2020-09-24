@@ -475,7 +475,7 @@ int BVPGSL_LUdcmp(const int N, double JacVal[], int JacRow[], int JacCol[], doub
 	end = clock();
 	time_spent2 = (double)(end - begin) / CLOCKS_PER_SEC;
 	printf("Elapsed Time: %10.3f [m], %11.4e [s] for BVP LU_solve.\n",(time_spent2-time_spent1)/60.0,(time_spent2-time_spent1));
-	printf("Elapsed Time: %10.3f [m], %11.4e [s] for BVP/GSL LU decomposition Solver.\n",time_spent2/60.0,time_spent2);
+	printf("Elapsed Time: %10.3f [m], %11.4e [s] for BVP/GSL LU dcmp Solver.\n",time_spent2/60.0,time_spent2);
 
 
 	//Output solution

@@ -784,7 +784,7 @@ int main(int argc, char *argv[])
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	//-------------------- IC Export --------------------
 	//-------------------------------------------------------------------------------------------------------------------------------------------
-
+/*
 	fprintf(iboutfile,"int BVP_GENIC(struct param_type *params, struct ICparam_type *ICparams, double x[], double y[], double Psi[], double GRIDdx[], double GRIDdy[])\n");
 	fprintf(iboutfile,"{\n");
 	fprintf(iboutfile,"	int i,j,k,l, status;\n");
@@ -877,7 +877,7 @@ int main(int argc, char *argv[])
 	fprintf(iboutfile,"\n");
 	fprintf(iboutfile,"\n");
 	fprintf(iboutfile,"\n");
-
+*/
 
 	//Cleanup
 	fclose(iboutfile);

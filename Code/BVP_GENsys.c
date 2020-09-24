@@ -692,11 +692,6 @@ int BVP_GENsys(struct param_type *params, double x[], double y[], double Psi[], 
 				JacCol[nnztemp] = (I*n +J+sx[a])*p +5;
 				nnztemp += 1;
 				
-				JacVal[nnztemp] = dFE1d7d00*a7d0[a] + dFE1d7d10*a7d1[a] + dFE1d7d20*a7d2[a];
-				JacRow[nnztemp] = (k +pn);
-				JacCol[nnztemp] = (I*n +J+sx[a])*p +7;
-				nnztemp += 1;
-				
 				JacVal[nnztemp] = dFE1d9d00*a9d0[a] + dFE1d9d10*a9d1[a] + dFE1d9d20*a9d2[a];
 				JacRow[nnztemp] = (k +pn);
 				JacCol[nnztemp] = (I*n +J+sx[a])*p +9;
@@ -713,11 +708,6 @@ int BVP_GENsys(struct param_type *params, double x[], double y[], double Psi[], 
 				JacVal[nnztemp] = dFE1d1d01*b1d1[b] + dFE1d1d02*b1d2[b];
 				JacRow[nnztemp] = (k +pn);
 				JacCol[nnztemp] = ((I+sy[b])*n +J)*p +1;
-				nnztemp += 1;
-				
-				JacVal[nnztemp] = dFE1d2d01*b2d1[b] + dFE1d2d02*b2d2[b];
-				JacRow[nnztemp] = (k +pn);
-				JacCol[nnztemp] = ((I+sy[b])*n +J)*p +2;
 				nnztemp += 1;
 				
 				JacVal[nnztemp] = dFE1d3d01*b3d1[b] + dFE1d3d02*b3d2[b];
@@ -829,32 +819,12 @@ int BVP_GENsys(struct param_type *params, double x[], double y[], double Psi[], 
 				JacCol[nnztemp] = (I*n +J+sx[a])*p +4;
 				nnztemp += 1;
 				
-				JacVal[nnztemp] = dFE2d5d00*a5d0[a] + dFE2d5d10*a5d1[a] + dFE2d5d20*a5d2[a];
-				JacRow[nnztemp] = (k +pn);
-				JacCol[nnztemp] = (I*n +J+sx[a])*p +5;
-				nnztemp += 1;
-				
-				JacVal[nnztemp] = dFE2d7d00*a7d0[a] + dFE2d7d10*a7d1[a] + dFE2d7d20*a7d2[a];
-				JacRow[nnztemp] = (k +pn);
-				JacCol[nnztemp] = (I*n +J+sx[a])*p +7;
-				nnztemp += 1;
-				
-				JacVal[nnztemp] = dFE2d9d00*a9d0[a] + dFE2d9d10*a9d1[a] + dFE2d9d20*a9d2[a];
-				JacRow[nnztemp] = (k +pn);
-				JacCol[nnztemp] = (I*n +J+sx[a])*p +9;
-				nnztemp += 1;
-				
 			}
 			for (b = 0; b <= r+oneyside; ++b)
 			{
 				JacVal[nnztemp] = dFE2d0d01*b0d1[b] + dFE2d0d02*b0d2[b];
 				JacRow[nnztemp] = (k +pn);
 				JacCol[nnztemp] = ((I+sy[b])*n +J)*p +0;
-				nnztemp += 1;
-				
-				JacVal[nnztemp] = dFE2d1d01*b1d1[b] + dFE2d1d02*b1d2[b];
-				JacRow[nnztemp] = (k +pn);
-				JacCol[nnztemp] = ((I+sy[b])*n +J)*p +1;
 				nnztemp += 1;
 				
 				JacVal[nnztemp] = dFE2d2d01*b2d1[b] + dFE2d2d02*b2d2[b];

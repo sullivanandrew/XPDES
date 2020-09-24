@@ -9,8 +9,6 @@ booltonum := {true=1,false=0}:
 
 FEvar := [x::numeric,y::numeric,r_H::numeric,M::numeric,alpha::numeric,beta::numeric,u0d00::numeric,u0d10::numeric,u0d01::numeric,u0d20::numeric,u0d02::numeric,u1d00::numeric,u1d10::numeric,u1d01::numeric,u1d20::numeric,u1d02::numeric,u2d00::numeric,u2d10::numeric,u2d01::numeric,u2d20::numeric,u2d02::numeric,u3d00::numeric,u3d10::numeric,u3d01::numeric,u3d20::numeric,u3d02::numeric,u4d00::numeric,u4d10::numeric,u4d01::numeric,u4d20::numeric,u4d02::numeric,u5d00::numeric,u5d10::numeric,u5d01::numeric,u5d20::numeric,u5d02::numeric,u6d00::numeric,u6d10::numeric,u6d01::numeric,u6d20::numeric,u6d02::numeric,u7d00::numeric,u7d10::numeric,u7d01::numeric,u7d20::numeric,u7d02::numeric,u8d00::numeric,u8d10::numeric,u8d01::numeric,u8d20::numeric,u8d02::numeric,u9d00::numeric,u9d10::numeric,u9d01::numeric,u9d20::numeric,u9d02::numeric]:
 
-PHYSvar := [x::numeric,y::numeric,r_H::numeric,M::numeric,alpha::numeric,beta::numeric,u0d00::numeric,u1d00::numeric,u2d00::numeric,u3d00::numeric,u4d00::numeric,u5d00::numeric,u6d00::numeric,u7d00::numeric,u8d00::numeric,u9d00::numeric]:
-
 #:::::::::::::::::::: Export Equations ::::::::::::::::::::
 #----- FE -----
 FE0full := collect(subs(FEsub3export, FEsub2export, FEsub1export, FEsub0export, FE0),collectexport):
@@ -23,11 +21,6 @@ FE6full := collect(subs(FEsub3export, FEsub2export, FEsub1export, FEsub0export, 
 FE7full := collect(subs(FEsub3export, FEsub2export, FEsub1export, FEsub0export, FE7),collectexport):
 FE8full := collect(subs(FEsub3export, FEsub2export, FEsub1export, FEsub0export, FE8),collectexport):
 FE9full := collect(subs(FEsub3export, FEsub2export, FEsub1export, FEsub0export, FE9),collectexport):
-
-#----- PHYS -----
-PHYS0full := subs(FEsub0export,PHYS0):
-PHYS1full := subs(FEsub0export,PHYS1):
-PHYS2full := subs(FEsub0export,PHYS2):
 
 #----- dFE0 -----
 #FE0 du0
@@ -1008,16 +1001,6 @@ JSfileout := FileTools:-JoinPath(splitJSpath);
 if FileTools[Exists](JSfileout) then FileTools:-Remove(JSfileout) end if;
 
 #:::::::::::::::::::: Export ::::::::::::::::::::
-#----- PHYS -----
-PHYS0out := codegen[makeproc](convert(PHYS0full,float),PHYSvar):
-C(PHYS0out,output=FEfileout,precision=double);
-
-PHYS1out := codegen[makeproc](convert(PHYS1full,float),PHYSvar):
-C(PHYS1out,output=FEfileout,precision=double);
-
-PHYS2out := codegen[makeproc](convert(PHYS2full,float),PHYSvar):
-C(PHYS2out,output=FEfileout,precision=double);
-
 #----- FE0 -----
 FE0out := codegen[makeproc](convert(FE0full,float),FEvar):
 C(FE0out,output=FEfileout,precision=double);

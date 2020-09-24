@@ -178,17 +178,6 @@ int main(int argc, char *argv[])
 	}
 	fprintf(poutfile,"]:\n\n");
 
-	fprintf(poutfile,"PHYSvar := [x::numeric,y::numeric,r_H::numeric,M::numeric,alpha::numeric,beta::numeric,");
-	for (j = 0 ; j < FEn; ++j)
-	{
-		fprintf(poutfile,"u%id00::numeric",j);
-		if ((j+1) != FEn)
-		{
-			fprintf(poutfile,",");
-		}
-	}
-	fprintf(poutfile,"]:\n\n");
-
 
 	//-------------------- Export Equations --------------------
 	fprintf(poutfile,"#:::::::::::::::::::: Export Equations ::::::::::::::::::::\n");
@@ -196,13 +185,6 @@ int main(int argc, char *argv[])
 	for (i = 0; i < FEn; ++i)
 	{
 		fprintf(poutfile,"FE%ifull := collect(subs(FEsub3export, FEsub2export, FEsub1export, FEsub0export, FE%i),collectexport):\n",i,i);
-	}
-	fprintf(poutfile,"\n");
-
-	fprintf(poutfile,"#----- PHYS -----\n");
-	for (i = 0; i < 3; ++i) //Need 3 metric elements
-	{
-		fprintf(poutfile,"PHYS%ifull := subs(FEsub0export,PHYS%i):\n",i,i);
 	}
 	fprintf(poutfile,"\n");
 
@@ -316,13 +298,6 @@ int main(int argc, char *argv[])
 
 	//-------------------- Export --------------------
 	fprintf(poutfile,"#:::::::::::::::::::: Export ::::::::::::::::::::\n");
-	fprintf(poutfile,"#----- PHYS -----\n");
-	for (i = 0; i < 3; ++i)
-	{
-		fprintf(poutfile,"PHYS%iout := codegen[makeproc](convert(PHYS%ifull,float),PHYSvar):\n",i,i);
-		fprintf(poutfile,"C(PHYS%iout,output=FEfileout,precision=double);\n\n",i);
-	}
-
 	for (i = 0; i < FEn; ++i)
 	{
 		fprintf(poutfile,"#----- FE%i -----\n",i);
@@ -734,21 +709,6 @@ int main(int argc, char *argv[])
 
 	//----- FE Declaration -----
 	fprintf(coutfile,"//----- FE Declaration -----\n");
-	fprintf(coutfile,"//PHYS\n");
-	for (i = 0; i < 3; ++i)
-	{
-		fprintf(coutfile,"double PHYS%iout (double xk, double yk, double r_H, double M, double alpha, double beta,",i);
-		for (j = 0 ; j < FEn; ++j)
-		{
-			fprintf(coutfile," double u%id00k",j);
-			if ((j+1) != FEn)
-			{
-				fprintf(coutfile,",");
-			}
-		}
-		fprintf(coutfile,");\n");
-	}
-	fprintf(coutfile,"\n");
 
 	//Calculate declaration variable
 	strcpy(vardecl,"(double xk, double yk, double r_H, double M, double alpha, double beta,");

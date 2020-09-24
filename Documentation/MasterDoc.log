@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.15)  9 DEC 2019 12:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.25)  24 SEP 2020 14:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -820,25 +820,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 215.
  (./MasterDoc.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 215.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 215.
-
-
-Package rerunfilecheck Warning: File `MasterDoc.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `MasterDoc.out':
-(rerunfilecheck)             Before: 968FD3CF789446E78E0D3E205DD8BBF8;120
-(rerunfilecheck)             After:  25C60D2F1F5FA936BED689C6C41561DD;189.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `MasterDoc.out' has not changed.
+(rerunfilecheck)             Checksum: 25C60D2F1F5FA936BED689C6C41561DD;189.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 215.
  ) 
 Here is how much of TeX's memory you used:
- 17446 strings out of 494847
- 336425 string characters out of 6179080
- 384390 words of memory out of 5000000
- 20602 multiletter control sequences out of 15000+600000
+ 17447 strings out of 494847
+ 336441 string characters out of 6179080
+ 384440 words of memory out of 5000000
+ 20603 multiletter control sequences out of 15000+600000
  538459 words of font info for 56 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  32i,5n,36p,10360b,892s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -848,10 +838,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on MasterDoc.pdf (3 pages, 82256 bytes).
+Output written on MasterDoc.pdf (3 pages, 83098 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  16 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

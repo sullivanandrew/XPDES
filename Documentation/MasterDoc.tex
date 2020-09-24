@@ -93,8 +93,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 This is the documentation of the eXtreme Partial Differential Equation Solver (XPDES) as detailed
-in arxiv:TBD. This includes an overview of each component and the necessary steps to compile and
-execute the program. For any questions, contact Andrew Sullivan at andrew.sullivan4@montana.edu.
+in arxiv:2009.10614. This includes an overview of each component and the necessary steps to compile and
+execute the program. Note, you will need the GNU Scientific Library for the linear solvers. For any questions, contact Andrew Sullivan at andrew.sullivan@princeton.edu.
 
 \section{Folder Structure}
 \label{sec:folderstruct}
@@ -158,7 +158,7 @@ To facilitate the variable system of equations, certain files must be procedural
 \begin{enumerate}
 \item Compile full program with `BVPcompileFULL.sh'
 \begin{enumerate}
-\item The generators must be compiled with the user defined input of the number of field equations `nfields' which will be twice the number of fields. For example, for scalar-Gauss-Bonnet gravity, the 4 metric functions and the scalar field provide 5 fields total, each with a mixed partial derivative field equation associated with it for a total of 10 field equations so $\mathrm{nfields} = 10$. The maximum derivative order must also be supplied.
+\item The generators must be compiled with the user defined input of the number of field equations `nfields' which will be twice the number of fields. For example, for scalar-Gauss-Bonnet gravity, the 4 metric functions and the scalar field provide 5 fields total, each with a mixed partial derivative field equation associated with it for a total of 10 field equations so $\mathrm{nfields} = 10$. The maximum derivative order must also be supplied. The default is n=2. (Note that the code allows for n=3 but it has not been tested so use at your own risk.)
 \begin{itemize}
 \item `Export\_MapleGen.c' $\rarr$ `mgen.exe'
 \end{itemize}
