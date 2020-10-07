@@ -1,0 +1,66 @@
+Tue Jan 28 11:53:32 MST 2020
+
+Running BVP with tol =  1.0e-05, order r = 16.
+Grid size nxm =  61 x  31. Total pts = 18910.
+Coupling value alpha = 0.0100, beta = 1.00.
+Black hole parameters are r_H =  1.00 [Msun]. M =  2.00 [Msun].
+Chi = a/M =  0.00 []. a =  0.00 [Msun].
+ICalpha = -0.0010, ICchi = 0.000.
+Estimated modified non-zero count, and initial nnzparam: 2095197.
+Generating IC with delta = 0.0000.
+
+----- Iteration: 000 -----
+
+Elapsed Time:      1.577 [m],  9.4590e+01 [s] for Jacobian evaluation.
+Elapsed Time:      4.483 [m],  2.6896e+02 [s] for COO sort.
+Sorted COO (row major) format number of non-zeros: 2054133.
+Resizing number of nonzeros, nnzJac = 2054133.
+||b||    =  3.3598e-05.
+||u||    =  4.0000e+00.
+||J||    =  9.5147e+06.
+||Dx||   =  1.6664e-09.
+||Dy||   =  1.1995e-09.
+Begin Solver for nxm*p = N = 18910. Lin solver variable = 0.
+nnz = 2054133. N^2 = 357588100. rough sparsity = 0.5744 %.
+Elapsed Time:    297.440 [m],  1.7846e+04 [s] for GSL LU_decomp.
+Elapsed Time:      0.084 [m],  5.0500e+00 [s] for BVP LU_solve.
+Elapsed Time:    297.525 [m],  1.7851e+04 [s] for BVP/GSL LU dcmp Solver.
+|Dx| < tol.
+|Dy| < tol.
+||dPsi|| =  1.6734e-05.
+||dDx||  =  0.0000e+00.
+||dDy||  =  0.0000e+00.
+Ratio comparison x: Need  0.0000e+00 <  4.0000e-05.
+Ratio comparison y: Need  0.0000e+00 <  4.0000e-05.
+Grid size is sufficient.
+New btemp = 1.165e-09.
+Converged with ||btemp||    =  1.1646e-09 and w = 1.000.
+
+----- Iteration: 001 -----
+
+Elapsed Time:      1.741 [m],  1.0448e+02 [s] for Jacobian evaluation.
+Elapsed Time:      4.897 [m],  2.9384e+02 [s] for COO sort.
+Sorted COO (row major) format number of non-zeros: 2054133.
+||b||    =  1.1646e-09.
+||u||    =  4.0000e+00.
+||J||    =  9.5147e+06.
+||Dx||   =  1.7206e-07.
+||Dy||   =  8.2167e-08.
+Begin Solver for nxm*p = N = 18910. Lin solver variable = 0.
+nnz = 2054133. N^2 = 357588100. rough sparsity = 0.5744 %.
+Elapsed Time:    293.567 [m],  1.7614e+04 [s] for GSL LU_decomp.
+Elapsed Time:      0.136 [m],  8.1500e+00 [s] for BVP LU_solve.
+Elapsed Time:    293.702 [m],  1.7622e+04 [s] for BVP/GSL LU dcmp Solver.
+|Dx| < tol.
+|Dy| < tol.
+||dPsi|| =  5.1303e-07.
+||dDx||  =  0.0000e+00.
+||dDy||  =  0.0000e+00.
+Ratio comparison x: Need  0.0000e+00 <  4.0000e-05.
+Ratio comparison y: Need  0.0000e+00 <  4.0000e-05.
+
+SUCCESS!! ||b|| =  1.1646e-09 <= tol =  1.0000e-05.
+
+End of BVP.
+BVP Complete!
+Tue Jan 28 21:59:38 MST 2020
