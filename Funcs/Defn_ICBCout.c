@@ -9,7 +9,7 @@ double IC0out (
   double beta,
   double delta)
 {
-  return((0.1565656711e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta + 0.1e1) * pow(x - 0.2e1, 0.2e1) * r_H * r_H * (pow(x - 0.1e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(cos(y), 0.2e1) + pow(-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H, 0.2e1)) / (r_H * r_H * x * x * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(cos(y), 0.2e1) + 0.4e1 * (-0.2500000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + 0.7500000000e0 * r_H * r_H * (M + 0.2e1 * r_H) * pow(x, 0.5e1) - 0.1e1 * (M + 0.2e1 * r_H) * (M + 0.1750000000e1 * r_H) * r_H * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.2e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.3e1 * M * r_H * r_H - 0.2e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H)));
+  return((0.1565656711e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta + 0.1e1) * (-0.1e1 * r_H * r_H * (pow(x - 0.1e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) - 0.1e1 * r_H * r_H * pow(x, 0.4e1) + 0.2e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) - 0.2e1 * (M + 0.2e1 * r_H) * (M + r_H) * x * x + 0.4e1 * M * (M + 0.2e1 * r_H) * x - 0.2e1 * M * (M + 0.2e1 * r_H)) * pow(x - 0.2e1, 0.2e1) / (-0.1e1 * x * x * r_H * r_H * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) + 0.4e1 * pow(0.5000000000e0 * r_H * r_H * pow(x, 0.4e1) - 0.1e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) + (M + 0.2e1 * r_H) * (M + r_H) * x * x - 0.2e1 * M * (M + 0.2e1 * r_H) * x + M * (M + 0.2e1 * r_H), 0.2e1)) + 0.2164502164e-3 * alpha * alpha * (x - 0.1e1) * (0.1117e4 * pow(x, 0.10e2) - 0.24574e5 * pow(x, 0.9e1) + 0.246510e6 * pow(x, 0.8e1) - 0.1415920e7 * pow(x, 0.7e1) + 0.4941728e7 * pow(x, 0.6e1) - 0.10150448e8 * pow(x, 0.5e1) + 0.11892496e8 * pow(x, 0.4e1) - 0.7411712e7 * pow(x, 0.3e1) + 0.2000768e7 * x * x - 0.98560e5 * x + 0.19712e5) * pow(r_H, -0.4e1) / beta * pow(x - 0.2e1, -0.14e2)));
 }
 #include <math.h>
 
@@ -22,7 +22,7 @@ double IC1out (
   double beta,
   double delta)
 {
-  return((0.1565656711e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta + 0.1e1) * pow(x - 0.2e1, 0.2e1) * pow(pow(x - 0.1e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(cos(y), 0.2e1) + pow(-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H, 0.2e1), 0.2e1) / (r_H * r_H * x * x * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(cos(y), 0.2e1) + 0.4e1 * (-0.2500000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + 0.7500000000e0 * r_H * r_H * (M + 0.2e1 * r_H) * pow(x, 0.5e1) - 0.1e1 * (M + 0.2e1 * r_H) * (M + 0.1750000000e1 * r_H) * r_H * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.2e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.3e1 * M * r_H * r_H - 0.2e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H)));
+  return((0.1565656711e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta + 0.1e1) * (pow(pow(x - 0.1e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) - 0.1e1 * r_H * r_H * pow(x, 0.4e1) + 0.2e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) - 0.2e1 * (M + 0.2e1 * r_H) * (M + r_H) * x * x + 0.4e1 * M * (M + 0.2e1 * r_H) * x - 0.2e1 * M * (M + 0.2e1 * r_H), 0.2e1) * pow(x - 0.2e1, 0.2e1) / (-0.1e1 * x * x * r_H * r_H * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) + 0.4e1 * pow(0.5000000000e0 * r_H * r_H * pow(x, 0.4e1) - 0.1e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) + (M + 0.2e1 * r_H) * (M + r_H) * x * x - 0.2e1 * M * (M + 0.2e1 * r_H) * x + M * (M + 0.2e1 * r_H), 0.2e1)) - 0.6926406926e-2 * alpha * alpha * (0.71e2 * pow(x, 0.8e1) - 0.1420e4 * pow(x, 0.7e1) + 0.11554e5 * pow(x, 0.6e1) - 0.49788e5 * pow(x, 0.5e1) + 0.118374e6 * pow(x, 0.4e1) - 0.167280e6 * pow(x, 0.3e1) + 0.147600e6 * x * x - 0.78720e5 * x + 0.19680e5) * pow(x - 0.1e1, 0.2e1) * pow(r_H, -0.4e1) / beta * pow(x - 0.2e1, -0.10e2)));
 }
 #include <math.h>
 
@@ -35,7 +35,7 @@ double IC2out (
   double beta,
   double delta)
 {
-  return((0.1565656711e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta + 0.1e1) * pow(x - 0.2e1, 0.2e1));
+  return((0.1565656711e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta + 0.1e1) * (pow(x - 0.2e1, 0.2e1) - 0.6926406926e-2 * alpha * alpha * (0.71e2 * pow(x, 0.8e1) - 0.1420e4 * pow(x, 0.7e1) + 0.11554e5 * pow(x, 0.6e1) - 0.49788e5 * pow(x, 0.5e1) + 0.118374e6 * pow(x, 0.4e1) - 0.167280e6 * pow(x, 0.3e1) + 0.147600e6 * x * x - 0.78720e5 * x + 0.19680e5) * pow(x - 0.1e1, 0.2e1) * pow(r_H, -0.4e1) / beta * pow(x - 0.2e1, -0.10e2)));
 }
 #include <math.h>
 
@@ -48,7 +48,7 @@ double IC3out (
   double beta,
   double delta)
 {
-  return(-0.2e1 * (0.1565656711e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta + 0.1e1) * pow(x - 0.1e1, 0.2e1) * M * r_H * sqrt(M * M - 0.4e1 * r_H * r_H) * ((-0.1e1 * x * x + 0.2e1 * x - 0.2e1) * r_H + M * (x - 0.1e1)) / (r_H * r_H * x * x * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(cos(y), 0.2e1) + 0.4e1 * (-0.2500000000e0 * x * x * (x * x - 0.2e1 * x + 0.2e1) * pow(x - 0.2e1, 0.2e1) * pow(r_H, 0.3e1) + 0.7500000000e0 * x * x * M * (x - 0.1e1) * pow(x - 0.2e1, 0.2e1) * r_H * r_H - 0.1e1 * M * M * (x * x - 0.2e1 * x + 0.2e1) * pow(x - 0.1e1, 0.2e1) * r_H + pow(x - 0.1e1, 0.3e1) * pow(M, 0.3e1)) * ((-0.1e1 * x * x + 0.2e1 * x - 0.2e1) * r_H + M * (x - 0.1e1))));
+  return(-0.2e1 * (0.1565656711e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta + 0.1e1) * r_H * sqrt(M * M - 0.4e1 * r_H * r_H) * M * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H) * pow(x - 0.1e1, 0.2e1) / (-0.1e1 * x * x * r_H * r_H * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) + 0.4e1 * pow(0.5000000000e0 * r_H * r_H * pow(x, 0.4e1) - 0.1e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) + (M + 0.2e1 * r_H) * (M + r_H) * x * x - 0.2e1 * M * (M + 0.2e1 * r_H) * x + M * (M + 0.2e1 * r_H), 0.2e1)));
 }
 #include <math.h>
 
@@ -61,7 +61,7 @@ double IC4out (
   double beta,
   double delta)
 {
-  return(-0.2019793251e2 * (x - 0.1e1) * pow(x - 0.2e1, 0.2e1) * (-0.7500000000e0 * y * y * pow(x - 0.1e1, 0.4e1) * pow(x, 0.5e1) * pow(-0.1570796327e1 + y, 0.2e1) * pow(x - 0.2e1, 0.2e1) * r_H * r_H * pow(M + 0.2e1 * r_H, 0.2e1) * pow(M - 0.2e1 * r_H, 0.2e1) * delta * (y - 0.7853981635e0) * pow(cos(y), 0.4e1) - 0.3e1 * y * y * pow(x - 0.1e1, 0.2e1) * pow(x, 0.3e1) * pow(-0.1570796327e1 + y, 0.2e1) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H) * (-0.5000000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + r_H * r_H * (M + 0.3e1 * r_H) * pow(x, 0.5e1) + (-0.1e1 * M * M * r_H - 0.5e1 * M * r_H * r_H - 0.7e1 * pow(r_H, 0.3e1)) * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.4e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.4e1 * M * r_H * r_H - 0.4e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * (M + 0.2e1 * r_H) * (M - 0.2e1 * r_H) * delta * (y - 0.7853981635e0) * pow(cos(y), 0.2e1) + pow(x - 0.1e1, 0.2e1) * M * (0.5000000000e0 * r_H * r_H * pow(x, 0.4e1) - 0.1e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) + (M + 0.2e1 * r_H) * (M + r_H) * x * x - 0.2e1 * M * (M + 0.2e1 * r_H) * x + M * (M + 0.2e1 * r_H)) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H) * (pow(y, 0.3e1) * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(x, 0.4e1) - 0.1e1 * pow(y, 0.3e1) * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(x, 0.3e1) + 0.2475500893e-1) * sin(y) * (M + 0.2e1 * r_H) * (M - 0.2e1 * r_H) * cos(y) - 0.3e1 * y * y * pow(x, 0.3e1) * pow(-0.1570796327e1 + y, 0.2e1) * pow(-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H, 0.3e1) * (-0.2500000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + 0.7500000000e0 * r_H * r_H * (M + 0.2e1 * r_H) * pow(x, 0.5e1) - 0.1e1 * (M + 0.2e1 * r_H) * (M + 0.1750000000e1 * r_H) * r_H * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.2e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.3e1 * M * r_H * r_H - 0.2e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * delta * (y - 0.7853981635e0)) * r_H * r_H * pow(0.2500000000e0 * r_H * r_H * x * x * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(cos(y), 0.2e1) + (-0.2500000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + 0.7500000000e0 * r_H * r_H * (M + 0.2e1 * r_H) * pow(x, 0.5e1) - 0.1e1 * (M + 0.2e1 * r_H) * (M + 0.1750000000e1 * r_H) * r_H * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.2e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.3e1 * M * r_H * r_H - 0.2e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H), -0.2e1));
+  return(-0.3333333333e0 * (0.1565656711e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta + 0.1e1) * (x - 0.1e1) * (0.3e1 * pow(x, 0.4e1) - 0.30e2 * pow(x, 0.3e1) + 0.118e3 * x * x - 0.176e3 * x + 0.88e2) * pow(r_H, -0.2e1) * alpha * pow(x - 0.2e1, -0.6e1) / beta);
 }
 #include <math.h>
 
@@ -74,7 +74,7 @@ double IC5out (
   double beta,
   double delta)
 {
-  return(-0.4039586503e2 * (x - 0.1e1) * pow(x - 0.2e1, 0.2e1) * (pow(x - 0.1e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(cos(y), 0.2e1) + pow(-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H, 0.2e1)) * (-0.3750000000e0 * y * y * pow(x - 0.1e1, 0.4e1) * pow(x, 0.5e1) * pow(-0.1570796327e1 + y, 0.2e1) * pow(x - 0.2e1, 0.2e1) * r_H * r_H * pow(M + 0.2e1 * r_H, 0.2e1) * pow(M - 0.2e1 * r_H, 0.2e1) * delta * (y - 0.7853981635e0) * pow(cos(y), 0.4e1) + 0.1250000000e0 * pow(x - 0.1e1, 0.3e1) * x * x * pow(x - 0.2e1, 0.2e1) * (pow(y, 0.3e1) * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(x, 0.4e1) - 0.1e1 * pow(y, 0.3e1) * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(x, 0.3e1) + 0.2475500893e-1) * sin(y) * r_H * r_H * pow(M + 0.2e1 * r_H, 0.2e1) * pow(M - 0.2e1 * r_H, 0.2e1) * pow(cos(y), 0.3e1) - 0.1500000000e1 * y * y * pow(x - 0.1e1, 0.2e1) * pow(x, 0.3e1) * pow(-0.1570796327e1 + y, 0.2e1) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H) * (-0.5000000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + r_H * r_H * (M + 0.3e1 * r_H) * pow(x, 0.5e1) + (-0.1e1 * M * M * r_H - 0.5e1 * M * r_H * r_H - 0.7e1 * pow(r_H, 0.3e1)) * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.4e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.4e1 * M * r_H * r_H - 0.4e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * (M + 0.2e1 * r_H) * (M - 0.2e1 * r_H) * delta * (y - 0.7853981635e0) * pow(cos(y), 0.2e1) + (x - 0.1e1) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H) * (pow(y, 0.3e1) * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(x, 0.4e1) - 0.1e1 * pow(y, 0.3e1) * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(x, 0.3e1) + 0.2475500893e-1) * (-0.1250000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + 0.6250000000e0 * (M + 0.1200000000e1 * r_H) * r_H * r_H * pow(x, 0.5e1) + (-0.1e1 * M * M * r_H - 0.3125000000e1 * M * r_H * r_H - 0.1750000000e1 * pow(r_H, 0.3e1)) * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * pow(M + r_H, 0.2e1) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.2500000000e1 * M * r_H * r_H - 0.1e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * sin(y) * (M + 0.2e1 * r_H) * (M - 0.2e1 * r_H) * cos(y) - 0.1500000000e1 * y * y * pow(x, 0.3e1) * pow(-0.1570796327e1 + y, 0.2e1) * pow(-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H, 0.3e1) * (-0.2500000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + 0.7500000000e0 * r_H * r_H * (M + 0.2e1 * r_H) * pow(x, 0.5e1) - 0.1e1 * (M + 0.2e1 * r_H) * (M + 0.1750000000e1 * r_H) * r_H * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.2e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.3e1 * M * r_H * r_H - 0.2e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * delta * (y - 0.7853981635e0)) * pow(0.2500000000e0 * r_H * r_H * x * x * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(cos(y), 0.2e1) + (-0.2500000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + 0.7500000000e0 * r_H * r_H * (M + 0.2e1 * r_H) * pow(x, 0.5e1) - 0.1e1 * (M + 0.2e1 * r_H) * (M + 0.1750000000e1 * r_H) * r_H * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.2e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.3e1 * M * r_H * r_H - 0.2e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H), -0.2e1));
+  return((0.4696970134e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * y * y * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta - 0.2990184056e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.2e1) * delta) * (-0.1e1 * r_H * r_H * (pow(x - 0.1e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) - 0.1e1 * r_H * r_H * pow(x, 0.4e1) + 0.2e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) - 0.2e1 * (M + 0.2e1 * r_H) * (M + r_H) * x * x + 0.4e1 * M * (M + 0.2e1 * r_H) * x - 0.2e1 * M * (M + 0.2e1 * r_H)) * pow(x - 0.2e1, 0.2e1) / (-0.1e1 * x * x * r_H * r_H * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) + 0.4e1 * pow(0.5000000000e0 * r_H * r_H * pow(x, 0.4e1) - 0.1e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) + (M + 0.2e1 * r_H) * (M + r_H) * x * x - 0.2e1 * M * (M + 0.2e1 * r_H) * x + M * (M + 0.2e1 * r_H), 0.2e1)) + 0.2164502164e-3 * alpha * alpha * (x - 0.1e1) * (0.1117e4 * pow(x, 0.10e2) - 0.24574e5 * pow(x, 0.9e1) + 0.246510e6 * pow(x, 0.8e1) - 0.1415920e7 * pow(x, 0.7e1) + 0.4941728e7 * pow(x, 0.6e1) - 0.10150448e8 * pow(x, 0.5e1) + 0.11892496e8 * pow(x, 0.4e1) - 0.7411712e7 * pow(x, 0.3e1) + 0.2000768e7 * x * x - 0.98560e5 * x + 0.19712e5) * pow(r_H, -0.4e1) / beta * pow(x - 0.2e1, -0.14e2)) - 0.2019793251e2 * ((-0.1e1 * x * x + 0.2e1 * x - 0.2e1) * r_H + M * (x - 0.1e1)) * sin(y) * (0.5000000000e0 * x * x * pow(x - 0.2e1, 0.2e1) * r_H * r_H - 0.1e1 * M * (x - 0.1e1) * (x * x - 0.2e1 * x + 0.2e1) * r_H + pow(x - 0.1e1, 0.2e1) * M * M) * (pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(y, 0.3e1) * pow(x, 0.4e1) - 0.1e1 * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(y, 0.3e1) * pow(x, 0.3e1) + 0.2475500893e-1) * cos(y) * pow(x - 0.2e1, 0.2e1) * r_H * r_H * pow(x - 0.1e1, 0.3e1) * M * (M + 0.2e1 * r_H) * (M - 0.2e1 * r_H) * pow(-0.2500000000e0 * x * x * r_H * r_H * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) + pow(0.5000000000e0 * x * x * pow(x - 0.2e1, 0.2e1) * r_H * r_H - 0.1e1 * M * (x - 0.1e1) * (x * x - 0.2e1 * x + 0.2e1) * r_H + pow(x - 0.1e1, 0.2e1) * M * M, 0.2e1), -0.2e1));
 }
 #include <math.h>
 
@@ -87,7 +87,7 @@ double IC6out (
   double beta,
   double delta)
 {
-  return(-0.1514844939e2 * pow(x, 0.3e1) * (x - 0.1e1) * y * y * pow(0.3141592654e1 - 0.2e1 * y, 0.2e1) * delta * (0.3141592654e1 - 0.4e1 * y) * pow(x - 0.2e1, 0.2e1));
+  return((0.4696970134e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * y * y * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta - 0.2990184056e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.2e1) * delta) * (pow(pow(x - 0.1e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) - 0.1e1 * r_H * r_H * pow(x, 0.4e1) + 0.2e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) - 0.2e1 * (M + 0.2e1 * r_H) * (M + r_H) * x * x + 0.4e1 * M * (M + 0.2e1 * r_H) * x - 0.2e1 * M * (M + 0.2e1 * r_H), 0.2e1) * pow(x - 0.2e1, 0.2e1) / (-0.1e1 * x * x * r_H * r_H * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) + 0.4e1 * pow(0.5000000000e0 * r_H * r_H * pow(x, 0.4e1) - 0.1e1 * r_H * (M + 0.2e1 * r_H) * pow(x, 0.3e1) + (M + 0.2e1 * r_H) * (M + r_H) * x * x - 0.2e1 * M * (M + 0.2e1 * r_H) * x + M * (M + 0.2e1 * r_H), 0.2e1)) - 0.6926406926e-2 * alpha * alpha * (0.71e2 * pow(x, 0.8e1) - 0.1420e4 * pow(x, 0.7e1) + 0.11554e5 * pow(x, 0.6e1) - 0.49788e5 * pow(x, 0.5e1) + 0.118374e6 * pow(x, 0.4e1) - 0.167280e6 * pow(x, 0.3e1) + 0.147600e6 * x * x - 0.78720e5 * x + 0.19680e5) * pow(x - 0.1e1, 0.2e1) * pow(r_H, -0.4e1) / beta * pow(x - 0.2e1, -0.10e2)) + 0.4039586503e2 * sin(y) * (pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(y, 0.3e1) * pow(x, 0.4e1) - 0.1e1 * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(y, 0.3e1) * pow(x, 0.3e1) + 0.2475500893e-1) * cos(y) * pow(x - 0.2e1, 0.2e1) * (-0.1250000000e0 * x * x * r_H * r_H * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) + (-0.5000000000e0 * x * x * r_H + M * (x - 0.1e1)) * (0.5000000000e0 * x * x * pow(x - 0.2e1, 0.2e1) * r_H * r_H - 0.1e1 * M * (x - 0.1e1) * (x * x - 0.2e1 * x + 0.2e1) * r_H + pow(x - 0.1e1, 0.2e1) * M * M) * (-0.5000000000e0 * pow(x - 0.2e1, 0.2e1) * r_H + M * (x - 0.1e1))) * pow(x - 0.1e1, 0.2e1) * (pow(x - 0.1e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) - 0.1e1 * x * x * pow(x - 0.2e1, 0.2e1) * r_H * r_H + 0.2e1 * M * (x - 0.1e1) * (x * x - 0.2e1 * x + 0.2e1) * r_H - 0.2e1 * pow(x - 0.1e1, 0.2e1) * M * M) * (M + 0.2e1 * r_H) * (M - 0.2e1 * r_H) * pow(-0.2500000000e0 * x * x * r_H * r_H * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) + pow(0.5000000000e0 * x * x * pow(x - 0.2e1, 0.2e1) * r_H * r_H - 0.1e1 * M * (x - 0.1e1) * (x * x - 0.2e1 * x + 0.2e1) * r_H + pow(x - 0.1e1, 0.2e1) * M * M, 0.2e1), -0.2e1));
 }
 #include <math.h>
 
@@ -100,8 +100,10 @@ double IC7out (
   double beta,
   double delta)
 {
-  return(-0.1211875950e3 * (0.2500000000e0 * y * y * pow(x - 0.1e1, 0.2e1) * pow(x, 0.3e1) * pow(-0.1570796327e1 + y, 0.2e1) * pow(x - 0.2e1, 0.2e1) * r_H * r_H * (M + 0.2e1 * r_H) * (M - 0.2e1 * r_H) * delta * (y - 0.7853981635e0) * pow(cos(y), 0.2e1) + 0.8333333333e-1 * (x - 0.1e1) * pow(x - 0.2e1, 0.2e1) * (pow(y, 0.3e1) * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(x, 0.4e1) - 0.1e1 * pow(y, 0.3e1) * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(x, 0.3e1) + 0.2475500893e-1) * sin(y) * r_H * r_H * (M + 0.2e1 * r_H) * (M - 0.2e1 * r_H) * cos(y) + y * y * x * pow(-0.1570796327e1 + y, 0.2e1) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H) * (-0.2500000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + 0.7500000000e0 * r_H * r_H * (M + 0.2e1 * r_H) * pow(x, 0.5e1) - 0.1e1 * (M + 0.2e1 * r_H) * (M + 0.1750000000e1 * r_H) * r_H * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.2e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.3e1 * M * r_H * r_H - 0.2e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * delta * (y - 0.7853981635e0)) * pow(x - 0.1e1, 0.3e1) * M * x * x * sqrt(M * M - 0.4e1 * r_H * r_H) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H) * r_H * pow(0.2500000000e0 * r_H * r_H * x * x * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(cos(y), 0.2e1) + (-0.2500000000e0 * pow(r_H, 0.3e1) * pow(x, 0.6e1) + 0.7500000000e0 * r_H * r_H * (M + 0.2e1 * r_H) * pow(x, 0.5e1) - 0.1e1 * (M + 0.2e1 * r_H) * (M + 0.1750000000e1 * r_H) * r_H * pow(x, 0.4e1) + (M + 0.2e1 * r_H) * (M * M + 0.2e1 * M * r_H + 0.2e1 * r_H * r_H) * pow(x, 0.3e1) + (-0.3e1 * pow(M, 0.3e1) - 0.7e1 * M * M * r_H - 0.3e1 * M * r_H * r_H - 0.2e1 * pow(r_H, 0.3e1)) * x * x + 0.3e1 * M * M * (M + 0.2e1 * r_H) * x - 0.1e1 * M * M * (M + 0.2e1 * r_H)) * (-0.1e1 * x * x * r_H + (M + 0.2e1 * r_H) * x - 0.1e1 * M - 0.2e1 * r_H), -0.2e1));
+  return((0.4696970134e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * y * y * pow(0.1e1 - 0.6366197722e0 * y, 0.3e1) * delta - 0.2990184056e3 * pow(x, 0.3e1) * (-0.1e1 * x + 0.1e1) * pow(y, 0.3e1) * pow(0.1e1 - 0.6366197722e0 * y, 0.2e1) * delta) * (pow(x - 0.2e1, 0.2e1) - 0.6926406926e-2 * alpha * alpha * (0.71e2 * pow(x, 0.8e1) - 0.1420e4 * pow(x, 0.7e1) + 0.11554e5 * pow(x, 0.6e1) - 0.49788e5 * pow(x, 0.5e1) + 0.118374e6 * pow(x, 0.4e1) - 0.167280e6 * pow(x, 0.3e1) + 0.147600e6 * x * x - 0.78720e5 * x + 0.19680e5) * pow(x - 0.1e1, 0.2e1) * pow(r_H, -0.4e1) / beta * pow(x - 0.2e1, -0.10e2)));
 }
+#include <math.h>
+
 double IC8out (
   double x,
   double y,
@@ -111,8 +113,10 @@ double IC8out (
   double beta,
   double delta)
 {
-  return(IC8);
+  return(-0.1211875950e3 * x * x * M * ((-0.1e1 * x * x + 0.2e1 * x - 0.2e1) * r_H + M * (x - 0.1e1)) * pow(x - 0.1e1, 0.3e1) * r_H * sqrt(M * M - 0.4e1 * r_H * r_H) * (-0.2500000000e0 * (y - 0.7853981635e0) * pow(x, 0.3e1) * delta * pow(x - 0.1e1, 0.2e1) * pow(-0.1570796327e1 + y, 0.2e1) * (M + 0.2e1 * r_H) * y * y * r_H * r_H * (M - 0.2e1 * r_H) * pow(x - 0.2e1, 0.2e1) * pow(sin(y), 0.2e1) + 0.8333333333e-1 * cos(y) * (pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(y, 0.3e1) * pow(x, 0.4e1) - 0.1e1 * pow(-0.1570796327e1 + y, 0.3e1) * delta * pow(y, 0.3e1) * pow(x, 0.3e1) + 0.2475500893e-1) * (x - 0.1e1) * (M + 0.2e1 * r_H) * r_H * r_H * (M - 0.2e1 * r_H) * pow(x - 0.2e1, 0.2e1) * sin(y) + (y - 0.7853981635e0) * x * delta * pow(-0.1570796327e1 + y, 0.2e1) * y * y * pow(0.5000000000e0 * x * x * pow(x - 0.2e1, 0.2e1) * r_H * r_H - 0.1e1 * M * (x - 0.1e1) * (x * x - 0.2e1 * x + 0.2e1) * r_H + pow(x - 0.1e1, 0.2e1) * M * M, 0.2e1)) * pow(-0.2500000000e0 * x * x * r_H * r_H * pow(x - 0.1e1, 0.2e1) * pow(x - 0.2e1, 0.2e1) * (M - 0.2e1 * r_H) * (M + 0.2e1 * r_H) * pow(sin(y), 0.2e1) + pow(0.5000000000e0 * x * x * pow(x - 0.2e1, 0.2e1) * r_H * r_H - 0.1e1 * M * (x - 0.1e1) * (x * x - 0.2e1 * x + 0.2e1) * r_H + pow(x - 0.1e1, 0.2e1) * M * M, 0.2e1), -0.2e1));
 }
+#include <math.h>
+
 double IC9out (
   double x,
   double y,
@@ -122,7 +126,7 @@ double IC9out (
   double beta,
   double delta)
 {
-  return(IC9);
+  return(0.5049483129e1 * pow(x, 0.3e1) * pow(x - 0.1e1, 0.2e1) * y * y * pow(0.3141592654e1 - 0.2e1 * y, 0.2e1) * delta * (0.3141592654e1 - 0.4e1 * y) * (0.3e1 * pow(x, 0.4e1) - 0.30e2 * pow(x, 0.3e1) + 0.118e3 * x * x - 0.176e3 * x + 0.88e2) * alpha * pow(r_H, -0.2e1) * pow(x - 0.2e1, -0.6e1) / beta);
 }
 double BC0X0out (
   double x,
@@ -3884,7 +3888,7 @@ double BC3X0out (
   double u9d10,
   double u9d01)
 {
-  return(u3d00 - 0.5000000000e0 / M * r_H * sqrt(M * M - 0.4e1 * r_H * r_H) / (M + 0.2e1 * r_H));
+  return(u3d00 - 0.5000000000e0 * r_H * sqrt(M * M - 0.4e1 * r_H * r_H) / (M + 0.2e1 * r_H) / M);
 }
 double dBC3X0d0d00out (
   double x,
@@ -5124,7 +5128,7 @@ double BC4X0out (
   double u9d10,
   double u9d01)
 {
-  return(u4d00 - 0.1e1 * u0d01);
+  return(u4d10);
 }
 double dBC4X0d0d00out (
   double x,
@@ -5244,7 +5248,7 @@ double dBC4X0d0d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC4X0d1d00out (
   double x,
@@ -5644,7 +5648,7 @@ double dBC4X0d4d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.1e1);
+  return(0.0e0);
 }
 double dBC4X0d4d10out (
   double x,
@@ -5684,7 +5688,7 @@ double dBC4X0d4d10out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC4X0d4d01out (
   double x,
@@ -6364,7 +6368,7 @@ double BC5X0out (
   double u9d10,
   double u9d01)
 {
-  return(u5d00 - 0.1e1 * u1d01);
+  return(u5d00 - 0.1e1 * u0d01);
 }
 double dBC5X0d0d00out (
   double x,
@@ -6484,7 +6488,7 @@ double dBC5X0d0d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC5X0d1d00out (
   double x,
@@ -6604,7 +6608,7 @@ double dBC5X0d1d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC5X0d2d00out (
   double x,
@@ -7604,7 +7608,7 @@ double BC6X0out (
   double u9d10,
   double u9d01)
 {
-  return(u6d00 - 0.1e1 * u2d01);
+  return(u6d00 - 0.1e1 * u1d01);
 }
 double dBC6X0d0d00out (
   double x,
@@ -7844,7 +7848,7 @@ double dBC6X0d1d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC6X0d2d00out (
   double x,
@@ -7964,7 +7968,7 @@ double dBC6X0d2d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC6X0d3d00out (
   double x,
@@ -8844,7 +8848,7 @@ double BC7X0out (
   double u9d10,
   double u9d01)
 {
-  return(u7d00 - 0.1e1 * u3d01);
+  return(u7d00 - 0.1e1 * u2d01);
 }
 double dBC7X0d0d00out (
   double x,
@@ -9204,7 +9208,7 @@ double dBC7X0d2d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC7X0d3d00out (
   double x,
@@ -9324,7 +9328,7 @@ double dBC7X0d3d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC7X0d4d00out (
   double x,
@@ -10084,7 +10088,7 @@ double BC8X0out (
   double u9d10,
   double u9d01)
 {
-  return(BC8X0);
+  return(u8d00 - 0.1e1 * u3d01);
 }
 double dBC8X0d0d00out (
   double x,
@@ -10564,7 +10568,7 @@ double dBC8X0d3d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC8X0d4d00out (
   double x,
@@ -11084,7 +11088,7 @@ double dBC8X0d8d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC8X0d8d10out (
   double x,
@@ -11324,7 +11328,7 @@ double BC9X0out (
   double u9d10,
   double u9d01)
 {
-  return(BC9X0);
+  return(u9d00 - 0.1e1 * u4d01);
 }
 double dBC9X0d0d00out (
   double x,
@@ -11924,7 +11928,7 @@ double dBC9X0d4d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC9X0d5d00out (
   double x,
@@ -12444,7 +12448,7 @@ double dBC9X0d9d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC9X0d9d10out (
   double x,
@@ -17524,7 +17528,7 @@ double BC4X1out (
   double u9d10,
   double u9d01)
 {
-  return(u4d00 - 0.1e1 * u0d01);
+  return(u4d00);
 }
 double dBC4X1d0d00out (
   double x,
@@ -17644,7 +17648,7 @@ double dBC4X1d0d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC4X1d1d00out (
   double x,
@@ -18764,7 +18768,7 @@ double BC5X1out (
   double u9d10,
   double u9d01)
 {
-  return(u5d00 - 0.1e1 * u1d01);
+  return(u5d00 - 0.1e1 * u0d01);
 }
 double dBC5X1d0d00out (
   double x,
@@ -18884,7 +18888,7 @@ double dBC5X1d0d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC5X1d1d00out (
   double x,
@@ -19004,7 +19008,7 @@ double dBC5X1d1d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC5X1d2d00out (
   double x,
@@ -20004,7 +20008,7 @@ double BC6X1out (
   double u9d10,
   double u9d01)
 {
-  return(u6d00 - 0.1e1 * u2d01);
+  return(u6d00 - 0.1e1 * u1d01);
 }
 double dBC6X1d0d00out (
   double x,
@@ -20244,7 +20248,7 @@ double dBC6X1d1d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC6X1d2d00out (
   double x,
@@ -20364,7 +20368,7 @@ double dBC6X1d2d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC6X1d3d00out (
   double x,
@@ -21244,7 +21248,7 @@ double BC7X1out (
   double u9d10,
   double u9d01)
 {
-  return(u7d00 - 0.1e1 * u3d01);
+  return(u7d00 - 0.1e1 * u2d01);
 }
 double dBC7X1d0d00out (
   double x,
@@ -21604,7 +21608,7 @@ double dBC7X1d2d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC7X1d3d00out (
   double x,
@@ -21724,7 +21728,7 @@ double dBC7X1d3d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC7X1d4d00out (
   double x,
@@ -22484,7 +22488,7 @@ double BC8X1out (
   double u9d10,
   double u9d01)
 {
-  return(BC8X1);
+  return(u8d00 - 0.1e1 * u3d01);
 }
 double dBC8X1d0d00out (
   double x,
@@ -22964,7 +22968,7 @@ double dBC8X1d3d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC8X1d4d00out (
   double x,
@@ -23484,7 +23488,7 @@ double dBC8X1d8d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC8X1d8d10out (
   double x,
@@ -23724,7 +23728,7 @@ double BC9X1out (
   double u9d10,
   double u9d01)
 {
-  return(BC9X1);
+  return(u9d00 - 0.1e1 * u4d01);
 }
 double dBC9X1d0d00out (
   double x,
@@ -24324,7 +24328,7 @@ double dBC9X1d4d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC9X1d5d00out (
   double x,
@@ -24844,7 +24848,7 @@ double dBC9X1d9d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC9X1d9d10out (
   double x,
@@ -29924,7 +29928,7 @@ double BC4Y1out (
   double u9d10,
   double u9d01)
 {
-  return(u4d00 - 0.1e1 * u0d01);
+  return(u4d01);
 }
 double dBC4Y1d0d00out (
   double x,
@@ -30044,7 +30048,7 @@ double dBC4Y1d0d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC4Y1d1d00out (
   double x,
@@ -30444,7 +30448,7 @@ double dBC4Y1d4d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.1e1);
+  return(0.0e0);
 }
 double dBC4Y1d4d10out (
   double x,
@@ -30524,7 +30528,7 @@ double dBC4Y1d4d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC4Y1d5d00out (
   double x,
@@ -31164,7 +31168,7 @@ double BC5Y1out (
   double u9d10,
   double u9d01)
 {
-  return(u5d00 - 0.1e1 * u1d01);
+  return(u5d00 - 0.1e1 * u0d01);
 }
 double dBC5Y1d0d00out (
   double x,
@@ -31284,7 +31288,7 @@ double dBC5Y1d0d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC5Y1d1d00out (
   double x,
@@ -31404,7 +31408,7 @@ double dBC5Y1d1d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC5Y1d2d00out (
   double x,
@@ -32404,7 +32408,7 @@ double BC6Y1out (
   double u9d10,
   double u9d01)
 {
-  return(u6d00 - 0.1e1 * u2d01);
+  return(u6d00 - 0.1e1 * u1d01);
 }
 double dBC6Y1d0d00out (
   double x,
@@ -32644,7 +32648,7 @@ double dBC6Y1d1d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC6Y1d2d00out (
   double x,
@@ -32764,7 +32768,7 @@ double dBC6Y1d2d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC6Y1d3d00out (
   double x,
@@ -33644,7 +33648,7 @@ double BC7Y1out (
   double u9d10,
   double u9d01)
 {
-  return(u7d00 - 0.1e1 * u3d01);
+  return(u7d00 - 0.1e1 * u2d01);
 }
 double dBC7Y1d0d00out (
   double x,
@@ -34004,7 +34008,7 @@ double dBC7Y1d2d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC7Y1d3d00out (
   double x,
@@ -34124,7 +34128,7 @@ double dBC7Y1d3d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC7Y1d4d00out (
   double x,
@@ -34884,7 +34888,7 @@ double BC8Y1out (
   double u9d10,
   double u9d01)
 {
-  return(BC8Y1);
+  return(u8d00 - 0.1e1 * u3d01);
 }
 double dBC8Y1d0d00out (
   double x,
@@ -35364,7 +35368,7 @@ double dBC8Y1d3d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC8Y1d4d00out (
   double x,
@@ -35884,7 +35888,7 @@ double dBC8Y1d8d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC8Y1d8d10out (
   double x,
@@ -36124,7 +36128,7 @@ double BC9Y1out (
   double u9d10,
   double u9d01)
 {
-  return(BC9Y1);
+  return(u9d00 - 0.1e1 * u4d01);
 }
 double dBC9Y1d0d00out (
   double x,
@@ -36724,7 +36728,7 @@ double dBC9Y1d4d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC9Y1d5d00out (
   double x,
@@ -37244,7 +37248,7 @@ double dBC9Y1d9d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC9Y1d9d10out (
   double x,
@@ -42324,7 +42328,7 @@ double BC4Y0out (
   double u9d10,
   double u9d01)
 {
-  return(u4d00 - 0.1e1 * u0d01);
+  return(u4d01);
 }
 double dBC4Y0d0d00out (
   double x,
@@ -42444,7 +42448,7 @@ double dBC4Y0d0d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC4Y0d1d00out (
   double x,
@@ -42844,7 +42848,7 @@ double dBC4Y0d4d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.1e1);
+  return(0.0e0);
 }
 double dBC4Y0d4d10out (
   double x,
@@ -42924,7 +42928,7 @@ double dBC4Y0d4d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC4Y0d5d00out (
   double x,
@@ -43564,7 +43568,7 @@ double BC5Y0out (
   double u9d10,
   double u9d01)
 {
-  return(u5d00 - 0.1e1 * u1d01);
+  return(u5d00 - 0.1e1 * u0d01);
 }
 double dBC5Y0d0d00out (
   double x,
@@ -43684,7 +43688,7 @@ double dBC5Y0d0d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC5Y0d1d00out (
   double x,
@@ -43804,7 +43808,7 @@ double dBC5Y0d1d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC5Y0d2d00out (
   double x,
@@ -44804,7 +44808,7 @@ double BC6Y0out (
   double u9d10,
   double u9d01)
 {
-  return(u6d00 - 0.1e1 * u2d01);
+  return(u6d00 - 0.1e1 * u1d01);
 }
 double dBC6Y0d0d00out (
   double x,
@@ -45044,7 +45048,7 @@ double dBC6Y0d1d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC6Y0d2d00out (
   double x,
@@ -45164,7 +45168,7 @@ double dBC6Y0d2d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC6Y0d3d00out (
   double x,
@@ -46044,7 +46048,7 @@ double BC7Y0out (
   double u9d10,
   double u9d01)
 {
-  return(u7d00 - 0.1e1 * u3d01);
+  return(u7d00 - 0.1e1 * u2d01);
 }
 double dBC7Y0d0d00out (
   double x,
@@ -46404,7 +46408,7 @@ double dBC7Y0d2d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC7Y0d3d00out (
   double x,
@@ -46524,7 +46528,7 @@ double dBC7Y0d3d01out (
   double u9d10,
   double u9d01)
 {
-  return(-0.1e1);
+  return(0.0e0);
 }
 double dBC7Y0d4d00out (
   double x,
@@ -47284,7 +47288,7 @@ double BC8Y0out (
   double u9d10,
   double u9d01)
 {
-  return(BC8Y0);
+  return(u8d00 - 0.1e1 * u3d01);
 }
 double dBC8Y0d0d00out (
   double x,
@@ -47764,7 +47768,7 @@ double dBC8Y0d3d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC8Y0d4d00out (
   double x,
@@ -48284,7 +48288,7 @@ double dBC8Y0d8d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC8Y0d8d10out (
   double x,
@@ -48524,7 +48528,7 @@ double BC9Y0out (
   double u9d10,
   double u9d01)
 {
-  return(BC9Y0);
+  return(u9d00 - 0.1e1 * u4d01);
 }
 double dBC9Y0d0d00out (
   double x,
@@ -49124,7 +49128,7 @@ double dBC9Y0d4d01out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(-0.1e1);
 }
 double dBC9Y0d5d00out (
   double x,
@@ -49644,7 +49648,7 @@ double dBC9Y0d9d00out (
   double u9d10,
   double u9d01)
 {
-  return(0.0e0);
+  return(0.1e1);
 }
 double dBC9Y0d9d10out (
   double x,

@@ -710,6 +710,11 @@ int BVP_GENsys(struct param_type *params, double x[], double y[], double Psi[], 
 				JacCol[nnztemp] = ((I+sy[b])*n +J)*p +1;
 				nnztemp += 1;
 				
+				JacVal[nnztemp] = dFE1d2d01*b2d1[b] + dFE1d2d02*b2d2[b];
+				JacRow[nnztemp] = (k +pn);
+				JacCol[nnztemp] = ((I+sy[b])*n +J)*p +2;
+				nnztemp += 1;
+				
 				JacVal[nnztemp] = dFE1d3d01*b3d1[b] + dFE1d3d02*b3d2[b];
 				JacRow[nnztemp] = (k +pn);
 				JacCol[nnztemp] = ((I+sy[b])*n +J)*p +3;

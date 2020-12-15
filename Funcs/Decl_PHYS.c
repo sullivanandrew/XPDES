@@ -118,72 +118,6 @@ double dFISCOdxout (
   double u4d10,
   double u4d20);
 
-double KERRISCOout (
-  double x,
-  double r_H,
-  double M);
-
-double dKERRISCOdxout (
-  double x,
-  double r_H,
-  double M);
-
-double KERRISCOnumout (
-  double x,
-  double r_H,
-  double M);
-
-double KERRISCOdenout (
-  double x,
-  double r_H,
-  double M);
-
-double OrbLRout (
-  double x,
-  double y,
-  double r_H,
-  double M,
-  double alpha,
-  double beta,
-  double u0d00,
-  double u0d10,
-  double u0d20,
-  double u1d00,
-  double u1d10,
-  double u1d20,
-  double u2d00,
-  double u2d10,
-  double u2d20,
-  double u3d00,
-  double u3d10,
-  double u3d20,
-  double u4d00,
-  double u4d10,
-  double u4d20);
-
-double OrbISCOout (
-  double x,
-  double y,
-  double r_H,
-  double M,
-  double alpha,
-  double beta,
-  double u0d00,
-  double u0d10,
-  double u0d20,
-  double u1d00,
-  double u1d10,
-  double u1d20,
-  double u2d00,
-  double u2d10,
-  double u2d20,
-  double u3d00,
-  double u3d10,
-  double u3d20,
-  double u4d00,
-  double u4d10,
-  double u4d20);
-
 double FLRout (
   double x,
   double y,
@@ -229,16 +163,6 @@ double dFLRdxout (
   double u4d00,
   double u4d10,
   double u4d20);
-
-  double KERRLRout (
-    double x,
-    double r_H,
-    double M);
-
-  double dKERRLRdxout (
-    double x,
-    double r_H,
-    double M);
 
 double FISCO1out (
   double x,
@@ -423,3 +347,4 @@ double dFISCO4dxout (
   double u4d00,
   double u4d10,
   double u4d20);
+

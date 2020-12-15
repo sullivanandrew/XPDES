@@ -61,7 +61,7 @@ int BVP_LSsolver(struct param_type *params, int linsolvar, double JacVal[], int 
 		}
 		else
 		{
-			status = BVPGSL_LUdcmp(N, JacVal, JacRow, JacCol, Ddx, Dx, nnzJac);
+			//status = BVPGSL_LUdcmp(N, JacVal, JacRow, JacCol, Ddx, Dx, nnzJac);
 			if (status != 0)
 			{
 				printf("ERROR: Chosen linear solver.\n");
@@ -75,7 +75,7 @@ int BVP_LSsolver(struct param_type *params, int linsolvar, double JacVal[], int 
 		}
 		else
 		{
-			status = BVPGSL_LUdcmp(N, JacVal, JacRow, JacCol, Ddy, Dy, nnzJac);
+			//status = BVPGSL_LUdcmp(N, JacVal, JacRow, JacCol, Ddy, Dy, nnzJac);
 			if (status != 0)
 			{
 				printf("ERROR: Chosen linear solver.\n");
